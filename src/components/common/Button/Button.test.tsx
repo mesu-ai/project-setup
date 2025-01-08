@@ -1,4 +1,5 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import Button from './Button';
 
 describe('Button Component', () => {
@@ -7,10 +8,11 @@ describe('Button Component', () => {
     expect(screen.getByText('Click Me')).toBeInTheDocument();
   });
 
-  it('calls onClick handler when clicked', () => {
+  it('calls onClick handler when clicked', async () => {
     const onClickMock = jest.fn();
+    const user = userEvent.setup();
     render(<Button onClick={onClickMock}>Click Me</Button>);
-    fireEvent.click(screen.getByText('Click Me'));
+    await user.click(screen.getByText('Click Me'));
     expect(onClickMock).toHaveBeenCalledTimes(1);
   });
 
