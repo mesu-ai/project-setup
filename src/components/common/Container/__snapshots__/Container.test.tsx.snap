@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Container Component matches snapshot 1`] = `
+<div
+  class="sc-KXCwU ekWfvn"
+>
+  <div>
+    Content
+  </div>
+</div>
+`;
+
+exports[`Container Component matches snapshot for fluid container 1`] = `
+<div
+  class="sc-KXCwU ekWfvn"
+  data-fluid="true"
+>
+  <div>
+    Content
+  </div>
+</div>
+`;
